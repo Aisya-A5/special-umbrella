@@ -56,4 +56,10 @@ async def joined(ctx, member: discord.Member):
     await ctx.send(f'{member.name} joined {discord.utils.format_dt(member.joined_at)}')
     await ctx.send(f'you can use a command by using "$" in front of your text')
 
+@bot.command()
+async def tips_mengurangi_polusi(ctx):
+    await ctx.send(f'1. Membuang sampah pada tempatnya
+2. Menggunakan transportasi umum
+3. Mengurangi penggunaan limbah plastik'\n)
+
 bot.run("bot token")
