@@ -60,6 +60,6 @@ async def joined(ctx, member: discord.Member):
 async def tips_mengurangi_polusi(ctx):
     await ctx.send(f'1. Membuang sampah pada tempatnya
 2. Menggunakan transportasi umum
-3. Mengurangi penggunaan limbah plastik'\n)
+3. Mengurangi penggunaan limbah plastik')
 
 bot.run("bot token")
