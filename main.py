@@ -56,6 +56,12 @@ async def joined(ctx, member: discord.Member):
     await ctx.send(f'{member.name} joined {discord.utils.format_dt(member.joined_at)}')
     await ctx.send(f'you can use a command by using "$" in front of your text')
 
+@bot.command('duck')
+async def duck(ctx):
+    '''Setelah kita memanggil perintah bebek (duck), program akan memanggil fungsi get_duck_image_url'''
+    image_url = get_duck_image_url()
+    await ctx.send(image_url)
+
 @bot.command()
 async def tips_mengurangi_polusi(ctx):
     await ctx.send(f'1 Membuang sampah pada tempatnya')
