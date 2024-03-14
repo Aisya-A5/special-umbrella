@@ -29,8 +29,8 @@ async def bye(ctx):
     await ctx.send("\U0001f642")
 
 @bot.command()
-async def pwd(ctx):
-    await ctx.send(gen_pass(10))
+async def pwd(ctx,number):
+    await ctx.send(gen_pass(int(number)))
 
 @bot.command()
 async def koin(ctx):
