@@ -40,5 +40,3 @@ This bot was created to fight climate change that started a few years ago. Feel 
 ==> $tips_mengurangi_polusi (9)
 ==> $deteksiGambar + add attachment (10)
 ==> $AnorganikOrganik (11)
-
-
