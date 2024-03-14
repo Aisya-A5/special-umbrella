@@ -1,6 +1,6 @@
 🤖Discord bot with Image attachment AI🤖
 
-This bot was created to fight climate change, which started a few years ago. Feel free to use the code and spread awareness, let's protect our beloved planet. ✌
+This bot was created to fight climate change that started a a few years ago. Feel free to use the code and spread awareness, let's protect our beloved planet. ✌
 
 📝: some of the codes are written using Bahasa Indonesia.
 
