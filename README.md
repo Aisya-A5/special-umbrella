@@ -5,15 +5,15 @@ This bot was created to fight climate change that started a a few years ago. Fee
 📝: some of the codes are written using Bahasa Indonesia.
 
 ✅This bot can do:
-  🟩 generate random password characters
-  🟩 flipping a coin
-  🟩 give an emoji 
-  🟩 delete your recent message
-  🟩 give you some meme
-  🟩 give you a duck picture 🦆 
-  🟩 give you tips to lessen the pollution
-  🟩 do classification between duck and swan picture
-  🟩 do classification between organic trash and inorganic trash
+🟩 generate random password characters
+🟩 flipping a coin
+🟩 give an emoji 
+🟩 delete your recent message
+🟩 give you some meme
+🟩 give you a duck picture 🦆 
+🟩 give you tips to lessen the pollution
+🟩 do classification between duck and swan picture
+🟩 do classification between organic trash and inorganic trash
 
 🛠️HOW TO USE🛠️
 1. Download the zip file and unzip it once it's done
