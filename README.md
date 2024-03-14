@@ -29,14 +29,14 @@ This bot was created to fight climate change that started a few years ago. Feel 
 
 *look at the list of what this bot can do
 
-==> $hello (1)*
-==> $bye (2)
-==> $pwd (3)
-==> $koin (4)
-==> $react (5)
-==> $deleteme (6)
-==> $meme(7)
-==> $duck (8)
-==> $tips_mengurangi_polusi (9)
-==> $deteksiGambar + add attachment (10)
-==> $AnorganikOrganik (11)
+1. $hello (1)* 👋
+2. $bye (2)* 🙌
+3. $pwd (3)* 🔐
+4. $koin (4)* 🪙
+5. $react (5)* 😊
+6. $deleteme (6)* 🗑️
+7. $meme(7)* 😂
+8. $duck (8)* 🦆
+9. $tips_mengurangi_polusi (9)* 😶‍🌫️
+10. $deteksiGambar + add attachment (10)* 🦆🦢
+11. $AnorganikOrganik + add attachment (11)* 🍃🥫♻️🗑️
