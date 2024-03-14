@@ -1,6 +1,9 @@
 import discord
-from bot_logic import gen_pass, coin_sides, gen_emodji, gen_ans
+from bot_logic import gen_pass, coin_sides, gen_emodji, detected, anorganik_organik
 from discord.ext import commands
+import random
+import os
+import requests
 
 
 # Variabel intents menyimpan hak istimewa bot
@@ -15,7 +18,7 @@ bot = commands.Bot(command_prefix='$', intents=intents)
 
 @bot.event
 async def on_ready():
-    print(f'We have logged in as {bot.user}')
+    print(f'{bot.user} is on the go')
 
 @bot.command()
 async def hello(ctx):
@@ -56,6 +59,24 @@ async def joined(ctx, member: discord.Member):
     await ctx.send(f'{member.name} joined {discord.utils.format_dt(member.joined_at)}')
     await ctx.send(f'you can use a command by using "$" in front of your text')
 
+@bot.command()
+async def meme(ctx):
+    daftar_gambar = os.listdir('image')
+    gambar = random.choice(daftar_gambar)
+
+    with open(f'image/{gambar}', 'rb') as f:
+        # Mari simpan file perpustakaan/library Discord yang dikonversi dalam variabel ini!
+        picture = discord.File(f)
+
+    # Kita kemudian dapat mengirim file ini sebagai tolak ukur!
+    await ctx.send(file=picture)
+
+def get_duck_image_url():    
+    url = 'https://random-d.uk/api/random'
+    res = requests.get(url)
+    data = res.json()
+    return data['url']
+
 @bot.command('duck')
 async def duck(ctx):
     '''Setelah kita memanggil perintah bebek (duck), program akan memanggil fungsi get_duck_image_url'''
@@ -67,5 +88,33 @@ async def tips_mengurangi_polusi(ctx):
     await ctx.send(f'1 Membuang sampah pada tempatnya')
     await ctx.send (f'2 Menggunakan transportasi umum')
     await ctx.send(f'3 Mengurangi penggunaan limbah plastik')
+
+@bot.command()
+async def deteksiGambar(ctx):
+    if ctx.message.attachments:
+        for attachment in ctx.message.attachments:
+            await attachment.save('image/'+attachment.filename)
+            prob, name = detected("image/"+attachment.filename)
+            if name == 'angsa':
+                await ctx.send(f'saya yakin {prob}%, ini adalah {name} angsa ini memiliki leher yang cenderung lebih panjang dan paruh yang lebih besar dibandingkan bebek. Mereka hidup berkelompok dan merupakan unggas yang sering dilambangkan sebagai bentuk kesetiaan cinta')
+            elif name == 'bebek':
+                await ctx.send(f'saya yakin {prob}%, ini adalah {name} bebek cenderung memiliki leher pendek dan badan yang kecil dibandingkan dengan angsa, mereka hidup berkelompok dan merupakan unggas yang sering bermigrasi ke tempat yang lebih hangat apabila habitat yang sedang mereka tinggali mengalami musim dingin.')
+
+    else:
+        await ctx.send("Images not found!")
+
+@bot.command()
+async def AnorganikOrganik(ctx):
+    if ctx.message.attachments:
+        for attachment in ctx.message.attachments:
+            await attachment.save('image/'+attachment.filename)
+            prob, name = anorganik_organik("image/"+attachment.filename)
+            if name == 'anorganik':
+                await ctx.send(f'saya yakin {prob}%, ini adalah {name} sampah jenis anorganik adalah sampah yang membutuhkan waktu yang lama untuk bisa diuraikan oleh lingkungan, biasanya sampah ini bukan berasal dari makhluk hidup, sampah ini bisa dipilah-pilih lagi dan dibagi antara yang bisa didaur ulang dari rumah dan yang memerlukan penanganan yang lebih kompleks.')
+            elif name == 'organik':
+                await ctx.send(f'saya yakin {prob}%, ini adalah {name} sampah jenis organik adalah sampah yang mudah diuraikan secara natural oleh lingkungan (pembusukan), biasanya sampah ini berasal dari makhluk hidup seperti tanaman dan hewan. Sampah jenis ini bisa dipilah-pilih dan digunakan sebagai pupuk kompos untuk menyuburkan tanaman.')
+
+    else:
+        await ctx.send("Images not found!")
 
 bot.run("bot token")
