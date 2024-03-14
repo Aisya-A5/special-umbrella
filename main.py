@@ -18,7 +18,7 @@ bot = commands.Bot(command_prefix='$', intents=intents)
 
 @bot.event
 async def on_ready():
-    print(f'{bot.user} is on the go')
+    print(f'{bot.user} on the go')
 
 @bot.command()
 async def hello(ctx):
@@ -36,26 +36,19 @@ async def pwd(ctx):
 async def koin(ctx):
     await ctx.send(coin_sides())
 
-
 @bot.command()
 async def react(ctx):
     await ctx.send(gen_emodji())
-
-@bot.command()
-async def heh(ctx, count_heh = 5):
-    await ctx.send("he" * count_heh)
-
+    
 @bot.command()
 async def deleteme(ctx):
     await ctx.send("I will delete it in 3 seconds...", delete_after=3.0)
-
-async def on_message_delete(self, ctx):
-        ctx = f'{ctx.author} has deleted the message: {ctx.content}'
-        await ctx.channel.send(ctx)
+    async for message in ctx.channel.history(limit=3):
+        await message.delete()
 
 @bot.command()
 async def joined(ctx, member: discord.Member):
-    """Says when a member joined."""
+    #Says when a member joined.
     await ctx.send(f'{member.name} joined {discord.utils.format_dt(member.joined_at)}')
     await ctx.send(f'you can use a command by using "$" in front of your text')
 
