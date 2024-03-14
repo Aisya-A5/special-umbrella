@@ -4,7 +4,7 @@ from PIL import Image, ImageOps  # Install pillow instead of PIL
 import numpy as np
 
 def gen_pass(pass_length):
-    elements = "+-/*!&$#?=@<>"
+    elements = "+-/*!&$#?=@<>ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnopqrstu"
     password = ""
 
     for i in range(pass_length):
@@ -23,10 +23,6 @@ def coin_sides():
 def gen_emodji():
     emodji = ["\U0001f600", "\U0001f642", "\U0001F606", "\U0001F923"]
     return random.choice(emodji)
-
-def gen_ans():
-    jawaban = random.randint(1, 10)
-    return jawaban
 
 def detected(image_path):
     # Disable scientific notation for clarity
